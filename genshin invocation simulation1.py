@@ -14,3 +14,6 @@
 
 #Chercher rajouter les proba des autres personnages, parmi les 50% restants !
 #chercher comment sont réparties les proba des perso
+
+def invocation_banniere1():
+    
