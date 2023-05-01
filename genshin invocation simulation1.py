@@ -14,6 +14,6 @@
 
 #Chercher rajouter les proba des autres personnages, parmi les 50% restants !
 #chercher comment sont réparties les proba des perso
-
+#je cherche à savoir comment introduire des probabilités en python
 def invocation_banniere1():
     
