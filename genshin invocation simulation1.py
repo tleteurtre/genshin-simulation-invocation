@@ -1,3 +1,5 @@
+import random
+
 #infomations brutes :
 # un item (personnage ou armes) 5 étoiles tout les 90 invocations
 #Pour cette bannière ou le personnage mis en avant est Albédo : En prenant en compte qu'on a invoqué un item 5 étoiles, 50% de chance d'obtenir Albédo
@@ -15,5 +17,7 @@
 #Chercher rajouter les proba des autres personnages, parmi les 50% restants !
 #chercher comment sont réparties les proba des perso
 #je cherche à savoir comment introduire des probabilités en python
+
 def invocation_banniere1():
-    
+    invoc = random.choices(["Albedo", "Collei"], weights=[0.600, 99,4], k=1)[0]
+    print(invoc)
