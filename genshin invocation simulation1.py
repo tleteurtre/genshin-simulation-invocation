@@ -18,6 +18,6 @@ import random
 #chercher comment sont réparties les proba des perso
 #je cherche à savoir comment introduire des probabilités en python
 
-def invocation_banniere1():
-    invoc = random.choices(["Albedo", "Collei"], weights=[0.600, 99,4], k=1)[0]
+def banniere1():    
+    invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 2.500, 96.900], k=1)[0]
     print(invoc)
