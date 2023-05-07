@@ -20,4 +20,7 @@ import random
 
 def banniere1():    
     invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 2.500, 96.900], k=1)[0]
-    print(invoc)
+    if invoc == "3star":
+        print("win")
+    else :
+        print("defeat")
