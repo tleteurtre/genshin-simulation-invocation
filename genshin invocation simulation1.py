@@ -1,7 +1,7 @@
 import random
 
 #infomations brutes :
-# un item (personnage ou armes) 5 étoiles tout les 90 invocations
+# un item (personnage ou armes) 5 étoiles tout les 90 invocations (89 invocs avant la 1ere)
 #Pour cette bannière ou le personnage mis en avant est Albédo : En prenant en compte qu'on a invoqué un item 5 étoiles, 50% de chance d'obtenir Albédo
 # En prenant en compte que l'item n'est pas Albédo, le prochain personnage 5 étoiles sera forcément Albédo (Garantie)
 #utiliser class pour perso 5 étoiles / 4 étoiles vers la fin ?
@@ -15,10 +15,15 @@ import random
 #proba d'avoir un objet 4 stars avzc garantie  =99, 400
 
 #Chercher rajouter les proba des autres personnages, parmi les 50% restants !
-#chercher comment sont réparties les proba des perso
+#chercher comment sont réparties les proba des perso (jpense que c'est aléatoire donc ez) (perma = on peut optenir TOUT les 4 stars)
 #je cherche à savoir comment introduire des probabilités en python
+# liste perso 5 stars perma = Keqing Mona Qiqi Diluc Jean
+# liste perso 4 stars = TOUS = 
+# liste arme 5 stars perma = 
+# liste arme 4 stars perma = 
+# liste armes 3 stars = 
 
-def banniere1():    
+def banniere_perma():    
     invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 2.500, 96.900], k=1)[0]
     if invoc == "3star":
         print("win")
