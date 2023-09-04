@@ -12,20 +12,30 @@ import random
 # Dans ces personnages 5 stars, 50% de chance de tomber sur Albédo. Si le personnage optenu n'est pas Albédo, le prochain 5 stars sera forcément Albédo.
 
 #Taux d'optenir un perso 4 stars = 2,550% pour arme = 2, 550 donc taux d'optenir un item 4 stars = 5,100% L'optention d'un item 4 stars est garanti tout les 10 voeux effectués (cet item compris)
-#proba d'avoir un objet 4 stars avzc garantie  =99, 400
+#proba d'avoir un objet 4 stars avzc garantie  =99, 400 et les 0,600 restantes c les chances d'avoir du 5 stars
 
 #Chercher rajouter les proba des autres personnages, parmi les 50% restants !
 #chercher comment sont réparties les proba des perso (jpense que c'est aléatoire donc ez) (perma = on peut optenir TOUT les 4 stars)
 #je cherche à savoir comment introduire des probabilités en python
-# liste perso 5 stars perma = Keqing Mona Qiqi Diluc Jean
-# liste perso 4 stars = TOUS = 
-# liste arme 5 stars perma = 
-# liste arme 4 stars perma = 
-# liste armes 3 stars = 
 
-def banniere_perma():    
+# liste perso 5 stars perma = "Keqing" "Mona" "Qiqi" "Diluc" "Jean" "Tighnari" "dehya"
+# liste perso 4 stars = TOUS = "Bennet" "Amber" "Lisa" "Kaeya" "Barbara" "Dori" "Xinqyu" "Chongyun" "Xinyan" "Razor" "Noelle" "Ningguang" "Thomas" "Collei" "Candace" "Rosaria" "Beidou" "Layla" 
+# "Fishl" "Yanfei" "Sayu" "Gorou" "Yun Jin" "Mika" "Kujou Sara" "Faruzan" "Heizou" "Diona" "Kuki Shinobu" "Sucrose" "Yaoyao" "Xiangling"
+#-------------------------------- si le perso 4 stars n'est pas un de la bannière, le prochain perso 4 stars sera forcément un des trois---------------------------------------
+# liste arme 5 stars perma = "Atlas de la Voute d'Azur" "Berge de la Voute d'Azur" "Ailes de la Voute d'Azur" "Fierté de la Voute d'Azur" "Lame de la Voute d'Azur"
+
+# liste arme 4 stars perma = "rugissement du lion" "épée rituelle" "flute" "épée de favonius" "eclair des impasses" "ombre immaculée" "fluorescence" "espadon royal" "espadon rituel""épée horloge"
+# "espadon de favonius" "arc rituel" "lance de favonius" "fléau du dragon" "la prise" "traqueur des impasses" "derniere corde" "arc rouillé" "arc de chasse de favonius" "oeil de la perception"
+# "memoire de rituels" "mouvements vagabonds" "code de favonius" "atlas des terres et des mers"
+
+# liste armes 3 stars = "messager de l'aube" "lame froide" "épée céleste" "épée du voyageur" "ombre ferreuse" "grande épée en fer blanc" "grande épée céleste" "épée de la raison" "épée céleste"
+# "hallebarde" "pampille blanche" "pampille noire" "serment de l archer" "messager" "lance-pierre" "arc du corbeau" "arc courbé" "orbe jadien" "néphrite jumelle" "tales of the dragon slayers" 
+# "guide de magie" "conte d'un autre monde
+# "
+# mettre le système d'astérie et des trucs en couleur plus tard
+def banniere_perma_alpha():    
     invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 2.500, 96.900], k=1)[0]
     if invoc == "3star":
-        print("win")
-    else :
-        print("defeat")
+        
+        
+        
