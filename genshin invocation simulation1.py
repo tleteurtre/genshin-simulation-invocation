@@ -19,23 +19,33 @@ import random
 #je cherche à savoir comment introduire des probabilités en python
 
 # liste perso 5 stars perma = "Keqing" "Mona" "Qiqi" "Diluc" "Jean" "Tighnari" "dehya"
+
 # liste perso 4 stars = TOUS = "Bennet" "Amber" "Lisa" "Kaeya" "Barbara" "Dori" "Xinqyu" "Chongyun" "Xinyan" "Razor" "Noelle" "Ningguang" "Thomas" "Collei" "Candace" "Rosaria" "Beidou" "Layla" 
 # "Fishl" "Yanfei" "Sayu" "Gorou" "Yun Jin" "Mika" "Kujou Sara" "Faruzan" "Heizou" "Diona" "Kuki Shinobu" "Sucrose" "Yaoyao" "Xiangling"
 #-------------------------------- si le perso 4 stars n'est pas un de la bannière, le prochain perso 4 stars sera forcément un des trois---------------------------------------
-# liste arme 5 stars perma = "Atlas de la Voute d'Azur" "Berge de la Voute d'Azur" "Ailes de la Voute d'Azur" "Fierté de la Voute d'Azur" "Lame de la Voute d'Azur"
 
-# liste arme 4 stars perma = "rugissement du lion" "épée rituelle" "flute" "épée de favonius" "eclair des impasses" "ombre immaculée" "fluorescence" "espadon royal" "espadon rituel""épée horloge"
+# liste arme 5 stars perma = "Atlas de la Voute d'Azur", "Berge de la Voute d'Azur", "Ailes de la Voute d'Azur", "Fierté de la Voute d'Azur", "Lame de la Voute d'Azur",
+
+# liste arme 4 stars perma = "rugissement du lion", "épée rituelle", "flute", "épée de favonius", "eclair des impasses", "ombre immaculée", "fluorescence", "espadon royal", "espadon rituel", "épée horloge",
 # "espadon de favonius" "arc rituel" "lance de favonius" "fléau du dragon" "la prise" "traqueur des impasses" "derniere corde" "arc rouillé" "arc de chasse de favonius" "oeil de la perception"
-# "memoire de rituels" "mouvements vagabonds" "code de favonius" "atlas des terres et des mers"
+# "memoire de rituels", "mouvements vagabonds", "code de favonius", "atlas des terres et des mers"
 
-# liste armes 3 stars = "messager de l'aube" "lame froide" "épée céleste" "épée du voyageur" "ombre ferreuse" "grande épée en fer blanc" "grande épée céleste" "épée de la raison" "épée céleste"
-# "hallebarde" "pampille blanche" "pampille noire" "serment de l archer" "messager" "lance-pierre" "arc du corbeau" "arc courbé" "orbe jadien" "néphrite jumelle" "tales of the dragon slayers" 
-# "guide de magie" "conte d'un autre monde
+# liste armes 3 stars = "messager de l'aube", "lame froide", "épée céleste", "épée du voyageur", "ombre ferreuse", "grande épée en fer blanc", "grande épée céleste", "épée de la raison", "épée céleste",
+# "hallebarde", "pampille blanche", "pampille noire", "serment de l archer","messager", "lance-pierre", "arc du corbeau", "arc courbé", "orbe jadien", "néphrite jumelle", "tales of the dragon slayers" 
+# "guide de magie", "conte d'un autre monde"
 # "
 # mettre le système d'astérie et des trucs en couleur plus tard
-def banniere_perma_alpha():    
-    invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 2.500, 96.900], k=1)[0]
+
+# -----> jpense faut faire une boucle qui prends en compte les garanties et ajouter des dictionnaires ?
+def banniere_perma_alpha():
+    pb3 = 96.900
+    pb4 = 5.100
+    pb4gar = 100
+    pb4arm = 2.500
+    pb5 = 0.600
+    pb5gar = 100    
+    invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 5.100, 96.900], k=1)[0]
     if invoc == "3star":
-        
+#faire un dictionnary avec des chiffres prsk sinon les random.choices vont être trop trop long
         
         
