@@ -26,24 +26,29 @@ import random
 
 # liste arme 5 stars perma = "Atlas de la Voute d'Azur", "Berge de la Voute d'Azur", "Ailes de la Voute d'Azur", "Fierté de la Voute d'Azur", "Lame de la Voute d'Azur",
 
-# liste arme 4 stars perma = "rugissement du lion", "épée rituelle", "flute", "épée de favonius", "eclair des impasses", "ombre immaculée", "fluorescence", "espadon royal", "espadon rituel", "épée horloge",
-# "espadon de favonius" "arc rituel" "lance de favonius" "fléau du dragon" "la prise" "traqueur des impasses" "derniere corde" "arc rouillé" "arc de chasse de favonius" "oeil de la perception"
+# liste arme 4 stars perma = "rugissement du lion", "épée rituelle", "flute", "épée de favonius", "eclair des impasses", | "ombre immaculée", "fluorescence", "espadon royal", "espadon rituel", "épée horloge",
+# "espadon de favonius" | "arc rituel" "lance de favonius" "fléau du dragon" "la prise"| "traqueur des impasses" "derniere corde" "arc rouillé" "arc de chasse de favonius" |"oeil de la perception"
 # "memoire de rituels", "mouvements vagabonds", "code de favonius", "atlas des terres et des mers"
 
-# liste armes 3 stars = "messager de l'aube", "lame froide", "épée céleste", "épée du voyageur", "ombre ferreuse", "grande épée en fer blanc", "grande épée céleste", "épée de la raison", "épée céleste",
-# "hallebarde", "pampille blanche", "pampille noire", "serment de l archer","messager", "lance-pierre", "arc du corbeau", "arc courbé", "orbe jadien", "néphrite jumelle", "tales of the dragon slayers" 
+# liste armes 3 stars = "messager de l'aube", "lame froide", "épée céleste", "épée du voyageur", |"ombre ferreuse", "grande épée en fer blanc", "grande épée céleste", "épée de la raison", "épée céleste",|
+# "hallebarde", "pampille blanche", "pampille noire", |"serment de l archer","messager", "lance-pierre", "arc du corbeau", "arc courbé", |"orbe jadien", "néphrite jumelle", "tales of the dragon slayers" 
 # "guide de magie", "conte d'un autre monde"
 # "
 # mettre le système d'astérie et des trucs en couleur plus tard
 
 # -----> jpense faut faire une boucle qui prends en compte les garanties et ajouter des dictionnaires ?
 def banniere_perma_alpha():
-    pb3 = 96.900
-    pb4 = 5.100
-    pb4gar = 100
-    pb4arm = 2.500
-    pb5 = 0.600
-    pb5gar = 100    
+    arme_5_etoile_perma = {"grimoire1":"Atlas de la Voute d Azur", "lance1" : "Berge de la Voute d'Azur", "bow1" : "Ailes de la Voute d'Azur","claymore1": "Fierté de la Voute d'Azur","sword1" : "Lame de la Voute d'Azur"}
+
+arme_4_etoile_perma = {"sword2":"rugissement du lion","sword3" :"épée rituelle", "sword4":"flute","sword5": "épée de favonius","sword6": "eclair des impasses","sword7" : "ombre immaculée","claymore2" : "fluorescence", "claymore3" :"espadon royal", "claymore4" :"espadon rituel",
+                       "claymore5" : "épée horloge","claymore7" :"espadon de favonius","bow2":"arc rituel","bow3": "lance de favonius", "bow4":"fléau du dragon","bow5" :"la prise"}
+                                        #remettre en ordre ça
+    proba3star = 96.900
+    proba4star = 5.100
+    proba4star_garantie = 100
+    proba4star_arme = 2.500
+    proba5star = 0.600
+    proba5star_garantie = 100    
     invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 5.100, 96.900], k=1)[0]
     if invoc == "3star":
 #faire un dictionnary avec des chiffres prsk sinon les random.choices vont être trop trop long
