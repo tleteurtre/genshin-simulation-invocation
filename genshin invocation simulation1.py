@@ -1,7 +1,7 @@
 import random
 
 #infomations brutes :
-# un item (personnage ou armes) 5 étoiles tout les 90 invocations (89 invocs avant la 1ere)
+# un item (personnage ou armes) 5 étoiles tout les 90 invocations (89 invocs après la 1ere)
 #Pour cette bannière ou le personnage mis en avant est Albédo : En prenant en compte qu'on a invoqué un item 5 étoiles, 50% de chance d'obtenir Albédo
 # En prenant en compte que l'item n'est pas Albédo, le prochain personnage 5 étoiles sera forcément Albédo (Garantie)
 #utiliser class pour perso 5 étoiles / 4 étoiles vers la fin ?
@@ -43,13 +43,14 @@ def banniere_perma_alpha():
 arme_4_etoile_perma = {"sword2":"rugissement du lion","sword3" :"épée rituelle", "sword4":"flute","sword5": "épée de favonius","sword6": "eclair des impasses","sword7" : "ombre immaculée","claymore2" : "fluorescence", "claymore3" :"espadon royal", "claymore4" :"espadon rituel",
                        "claymore5" : "épée horloge","claymore7" :"espadon de favonius","bow2":"arc rituel","bow3": "lance de favonius", "bow4":"fléau du dragon","bow5" :"la prise"}
                                         #remettre en ordre ça
-    proba3star = 96.900
-    proba4star = 5.100
-    proba4star_garantie = 100
-    proba4star_arme = 2.500
+    proba3star = 94.3
+    proba4star_item = 5.100
+    proba4star_item_garantie = 100
+    proba4star_arme = 2.550
+    proba4star_perso = 2.550
     proba5star = 0.600
     proba5star_garantie = 100    
-    invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 5.100, 96.900], k=1)[0]
+    invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 5.100, 94.3], k=1)[0]
     if invoc == "3star":
 #faire un dictionnary avec des chiffres prsk sinon les random.choices vont être trop trop long
         
