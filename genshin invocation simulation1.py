@@ -27,7 +27,7 @@ import random
 # liste arme 5 stars perma = "Atlas de la Voute d'Azur", "Berge de la Voute d'Azur", "Ailes de la Voute d'Azur", "Fierté de la Voute d'Azur", "Lame de la Voute d'Azur",
 
 # liste arme 4 stars perma = "rugissement du lion", "épée rituelle", "flute", "épée de favonius", "eclair des impasses", | "ombre immaculée", "fluorescence", "espadon royal", "espadon rituel", "épée horloge",
-# "espadon de favonius" | "arc rituel" "lance de favonius" "fléau du dragon" "la prise"| "traqueur des impasses" "derniere corde" "arc rouillé" "arc de chasse de favonius" |"oeil de la perception"
+# "espadon de favonius" |"lance de favonius" "fléau du dragon" "la prise"| "traqueur des impasses" "arc rituel" "derniere corde" "arc rouillé" "arc de chasse de favonius" |"oeil de la perception"
 # "memoire de rituels", "mouvements vagabonds", "code de favonius", "atlas des terres et des mers"
 
 # liste armes 3 stars = "messager de l'aube", "lame froide", "épée céleste", "épée du voyageur", |"ombre ferreuse", "grande épée en fer blanc", "grande épée céleste", "épée de la raison", "épée céleste",|
@@ -35,14 +35,21 @@ import random
 # "guide de magie", "conte d'un autre monde"
 # "
 # mettre le système d'astérie et des trucs en couleur plus tard
-
+#faire un dico pour chaque type d'arme genre générer d'abord la rareté puis l'arme en question
 # -----> jpense faut faire une boucle qui prends en compte les garanties et ajouter des dictionnaires ?
 def banniere_perma_alpha():
-    arme_5_etoile_perma = {"grimoire1":"Atlas de la Voute d Azur", "lance1" : "Berge de la Voute d'Azur", "bow1" : "Ailes de la Voute d'Azur","claymore1": "Fierté de la Voute d'Azur","sword1" : "Lame de la Voute d'Azur"}
+    arme_5_stars_perma = {"gremory1":"Atlas de la Voute d Azur", "lance1" : "Berge de la Voute d'Azur", "bow1" : "Ailes de la Voute d'Azur",
+                           "claymore1": "Fierté de la Voute d'Azur","sword1" : "Lame de la Voute d'Azur"}
+    sword4starsperma = {"sword2" : "rugissement du lion", "sword3" : "epee rituelle", "sword4" : "flute", "sword5" :"epee de favonius", 
+                         "sword6" : "eclair des impasses"}
+    bow4starsperma = {"bow2": "derniere corde", "bow3" : "arc rituel","bow4" : "traqueur des impasses", "bow5" : "arc rouillé", 
+                      "bow6" : "arc de chasse de Favonius"}
+    claymore4starsperma ={"claymore2" : "ombre immaculée", "claymore3" : "espadon de Favonius", "claymore4" : "fluorescence",
+                          "claymore5" : "espadon rituel", "claymore6" : "espadon Royal"}
+    lance4starsperma = {"lance2" : "fleau du dragon", "lance3" : "la prise", "lance4" : "lance de Favonius"}
 
-arme_4_etoile_perma = {"sword2":"rugissement du lion","sword3" :"épée rituelle", "sword4":"flute","sword5": "épée de favonius","sword6": "eclair des impasses","sword7" : "ombre immaculée","claymore2" : "fluorescence", "claymore3" :"espadon royal", "claymore4" :"espadon rituel",
-                       "claymore5" : "épée horloge","claymore7" :"espadon de favonius","bow2":"arc rituel","bow3": "lance de favonius", "bow4":"fléau du dragon","bow5" :"la prise"}
-                                        #remettre en ordre ça
+    gremory4starsperma = {"gremory2" : "oeil de la perception", "gremory3" : "mouvement vagabond", "gremory4" : "atlas des Terres et des Mers",
+                          "gremory5" : "memoires des rituels", "gremory6" : "code de favonius"}
     proba3star = 94.3
     proba4star_item = 5.100
     proba4star_item_garantie = 100
@@ -51,7 +58,7 @@ arme_4_etoile_perma = {"sword2":"rugissement du lion","sword3" :"épée rituelle
     proba5star = 0.600
     proba5star_garantie = 100    
     invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 5.100, 94.3], k=1)[0]
-    if invoc == "3star":
-#faire un dictionnary avec des chiffres prsk sinon les random.choices vont être trop trop long
-        
+    if invoc == "5star":
+        arme5stars = random.choices(["grimoire1", "sword1", "bow1", "lance1", "claymore1"], k=1)[0]
+        print(sword4starsperma[arme5stars])
         
