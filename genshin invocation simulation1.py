@@ -24,12 +24,8 @@ import random
 # "Fishl" "Yanfei" "Sayu" "Gorou" "Yun Jin" "Mika" "Kujou Sara" "Faruzan" "Heizou" "Diona" "Kuki Shinobu" "Sucrose" "Yaoyao" "Xiangling"
 #-------------------------------- si le perso 4 stars n'est pas un de la bannière, le prochain perso 4 stars sera forcément un des trois---------------------------------------
 
+
 # liste arme 5 stars perma = "Atlas de la Voute d'Azur", "Berge de la Voute d'Azur", "Ailes de la Voute d'Azur", "Fierté de la Voute d'Azur", "Lame de la Voute d'Azur",
-
-# liste arme 4 stars perma = "rugissement du lion", "épée rituelle", "flute", "épée de favonius", "eclair des impasses", | "ombre immaculée", "fluorescence", "espadon royal", "espadon rituel", "épée horloge",
-# "espadon de favonius" |"lance de favonius" "fléau du dragon" "la prise"| "traqueur des impasses" "arc rituel" "derniere corde" "arc rouillé" "arc de chasse de favonius" |"oeil de la perception"
-# "memoire de rituels", "mouvements vagabonds", "code de favonius", "atlas des terres et des mers"
-
 # liste armes 3 stars = "messager de l'aube", "lame froide", "épée céleste", "épée du voyageur", |"ombre ferreuse", "grande épée en fer blanc", "grande épée céleste", "épée de la raison", "épée céleste",|
 # "hallebarde", "pampille blanche", "pampille noire", |"serment de l archer","messager", "lance-pierre", "arc du corbeau", "arc courbé", |"orbe jadien", "néphrite jumelle", "tales of the dragon slayers" 
 # "guide de magie", "conte d'un autre monde"
@@ -37,18 +33,47 @@ import random
 # mettre le système d'astérie et des trucs en couleur plus tard
 #faire un dico pour chaque type d'arme genre générer d'abord la rareté puis l'arme en question
 # -----> jpense faut faire une boucle qui prends en compte les garanties et ajouter des dictionnaires ?
+
+#au cas ou :
+sword4starsperma = {"sword2" : "rugissement du lion", "sword3" : "epee rituelle", "sword4" : "flute", "sword5" :"epee de favonius", 
+                         "sword6" : "eclair des impasses"}
+bow4starsperma = {"bow2": "derniere corde", "bow3" : "arc rituel","bow4" : "traqueur des impasses", "bow5" : "arc rouillé", 
+                      "bow6" : "arc de chasse de Favonius"}
+claymore4starsperma ={"claymore2" : "ombre immaculée", "claymore3" : "espadon de Favonius", "claymore4" : "fluorescence",
+                          "claymore5" : "espadon rituel", "claymore6" : "espadon Royal"}
+lance4starsperma = {"lance2" : "fleau du dragon", "lance3" : "la prise", "lance4" : "lance de Favonius"}
+
+gremory4starsperma = {"gremory2" : "oeil de la perception", "gremory3" : "mouvement vagabond", "gremory4" : "atlas des Terres et des Mers",
+                          "gremory5" : "memoires des rituels", "gremory6" : "code de favonius"}
+
+
+def generate_random_string():
+    words = ["sword", "gremory", "lance", "bow", "claymore"]
+    first_word = random.choice(words)
+    
+    random_number = str(random.randint(2, 6))
+    result = first_word + random_number
+    
+    return result
+random_string = generate_random_string()
+print(random_string)
+
+
+
+
+
+
+
 def banniere_perma_alpha():
     arme_5_stars_perma = {"gremory1":"Atlas de la Voute d Azur", "lance1" : "Berge de la Voute d'Azur", "bow1" : "Ailes de la Voute d'Azur",
                            "claymore1": "Fierté de la Voute d'Azur","sword1" : "Lame de la Voute d'Azur"}
-    sword4starsperma = {"sword2" : "rugissement du lion", "sword3" : "epee rituelle", "sword4" : "flute", "sword5" :"epee de favonius", 
-                         "sword6" : "eclair des impasses"}
-    bow4starsperma = {"bow2": "derniere corde", "bow3" : "arc rituel","bow4" : "traqueur des impasses", "bow5" : "arc rouillé", 
-                      "bow6" : "arc de chasse de Favonius"}
-    claymore4starsperma ={"claymore2" : "ombre immaculée", "claymore3" : "espadon de Favonius", "claymore4" : "fluorescence",
-                          "claymore5" : "espadon rituel", "claymore6" : "espadon Royal"}
-    lance4starsperma = {"lance2" : "fleau du dragon", "lance3" : "la prise", "lance4" : "lance de Favonius"}
-
-    gremory4starsperma = {"gremory2" : "oeil de la perception", "gremory3" : "mouvement vagabond", "gremory4" : "atlas des Terres et des Mers",
+    perso_5_stars = {"perso1": "Keqing", "perso2": "Mona", "perso3": "Qiqi", "perso4": "Diluc", "perso5" :"Jean", "perso6": "Tighnari", "perso6": "dehya"}
+    
+    arme_4_stars_perma = {"sword2" : "rugissement du lion", "sword3" : "epee rituelle", "sword4" : "flute", "sword5" :"epee de favonius", 
+                           "sword6" : "eclair des impasses","bow2": "derniere corde", "bow3" : "arc rituel","bow4" : "traqueur des impasses", "bow5" : "arc rouillé",
+                          "bow6" : "arc de chasse de Favonius","claymore2" : "ombre immaculée", "claymore3" : "espadon de Favonius", "claymore4" : "fluorescence",
+                          "claymore5" : "espadon rituel", "claymore6" : "espadon Royal","lance2" : "fleau du dragon", "lance3" : "la prise", "lance4" : "lance de Favonius", 
+                          "gremory2" : "oeil de la perception", "gremory3" : "mouvement vagabond", "gremory4" : "atlas des Terres et des Mers",
                           "gremory5" : "memoires des rituels", "gremory6" : "code de favonius"}
     proba3star = 94.3
     proba4star_item = 5.100
@@ -57,8 +82,12 @@ def banniere_perma_alpha():
     proba4star_perso = 2.550
     proba5star = 0.600
     proba5star_garantie = 100    
-    invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 5.100, 94.3], k=1)[0]
+    invoc = random.choices(["5star", "4star", "3star"], weights=[100.600, 5.100, 94.3], k=1)[0]
     if invoc == "5star":
-        arme5stars = random.choices(["grimoire1", "sword1", "bow1", "lance1", "claymore1"], k=1)[0]
-        print(sword4starsperma[arme5stars])
-        
+        item5stars = random.choices(["perso", "arme"], weights=[0.50, 0.50], k=1)[0]
+        if item5stars == "arme":
+            arme5stars = random.choices(["grimoire1", "sword1", "bow1", "lance1", "claymore1"], k=1)[0]
+            print(arme_5_stars_perma[arme5stars])
+        if item5stars== "perso":
+            print("ça vient")
+#pour truc du prof : 180 (au max pour etre sur) = 1 donc apres bah c des pourcentages de 1 ? faire une fonction qui permet de choisir a quelle % on veut savoir
