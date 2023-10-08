@@ -58,11 +58,10 @@ def generate_random_string():
 random_string = generate_random_string()
 print(random_string)
 
-
-
-
-
-
+def proba_perso_en_avant():
+    proba_100_prcent = 180
+    
+    
 
 def banniere_perma_alpha():
     arme_5_stars_perma = {"gremory1":"Atlas de la Voute d Azur", "lance1" : "Berge de la Voute d'Azur", "bow1" : "Ailes de la Voute d'Azur",
@@ -91,3 +90,6 @@ def banniere_perma_alpha():
         if item5stars== "perso":
             print("ça vient")
 #pour truc du prof : 180 (au max pour etre sur) = 1 donc apres bah c des pourcentages de 1 ? faire une fonction qui permet de choisir a quelle % on veut savoir
+
+def proba_perso_en_avant():
+    
