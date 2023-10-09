@@ -58,10 +58,13 @@ def generate_random_string():
 random_string = generate_random_string()
 print(random_string)
 
-def proba_perso_en_avant():
-    proba_100_prcent = 180
-    
-    
+def proba_perso_en_avant(demande):
+    if (1 <= demande <= 100):
+        pourcentage = "compléter"
+        print("Vous êtes sûr d'avoir", demande,"pourcent de chance d'obtenir le personnage mis en avant de la bannière au bout de", pourcentage,"invocations.")
+    else:
+        print("il faut que cette valeur soit entre 1 et 100 !")
+print(proba_perso_en_avant(50))
 
 def banniere_perma_alpha():
     arme_5_stars_perma = {"gremory1":"Atlas de la Voute d Azur", "lance1" : "Berge de la Voute d'Azur", "bow1" : "Ailes de la Voute d'Azur",
