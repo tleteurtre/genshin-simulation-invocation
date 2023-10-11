@@ -47,16 +47,18 @@ gremory4starsperma = {"gremory2" : "oeil de la perception", "gremory3" : "mouvem
                           "gremory5" : "memoires des rituels", "gremory6" : "code de favonius"}
 
 
-def generate_random_string():
+def generate_item_3or4():
     words = ["sword", "gremory", "lance", "bow", "claymore"]
     first_word = random.choice(words)
-    
-    random_number = str(random.randint(2, 6))
-    result = first_word + random_number
+    if first_word == "lance" :
+        random_number = str(random.randint(2, 4))
+        result = first_word + random_number
+    else :
+        random_number = str(random.randint(2, 6))
+        result = first_word + random_number
     
     return result
-random_string = generate_random_string()
-print(random_string)
+print(generate_item_3or4())
 
 
 def banniere_perma_alpha():
@@ -70,6 +72,11 @@ def banniere_perma_alpha():
                           "claymore5" : "espadon rituel", "claymore6" : "espadon Royal","lance2" : "fleau du dragon", "lance3" : "la prise", "lance4" : "lance de Favonius", 
                           "gremory2" : "oeil de la perception", "gremory3" : "mouvement vagabond", "gremory4" : "atlas des Terres et des Mers",
                           "gremory5" : "memoires des rituels", "gremory6" : "code de favonius"}
+    
+    
+    arme_3_stars_perma = {"sword2" : "messager de l'aube", "sword3" :"lame froide", "sword4" : "épée céleste", "sword5" : "épée du voyageur", "claymore2" : "ombre ferreuse", "claymore 3" : "grande épée en fer blanc", "claymore5" : "grande épée céleste", 
+                          "claymore6" : "épée de la raison", "claymore7" : "épée céleste","lance2" : "hallebarde", "pampille blanche", "pampille noire", |"serment de l archer","messager", "lance-pierre", "arc du corbeau", "arc courbé", |"orbe jadien", "néphrite jumelle", "tales of the dragon slayers" 
+"guide de magie", "conte d'un autre monde"}
     proba3star = 94.3
     proba4star_item = 5.100
     proba4star_item_garantie = 100
@@ -77,7 +84,7 @@ def banniere_perma_alpha():
     proba4star_perso = 2.550
     proba5star = 0.600
     proba5star_garantie = 100    
-    invoc = random.choices(["5star", "4star", "3star"], weights=[100.600, 5.100, 94.3], k=1)[0]
+    invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 5.100, 94.3], k=1)[0]
     if invoc == "5star":
         item5stars = random.choices(["perso", "arme"], weights=[0.50, 0.50], k=1)[0]
         if item5stars == "arme":
@@ -85,15 +92,17 @@ def banniere_perma_alpha():
             print(arme_5_stars_perma[arme5stars])
         if item5stars== "perso":
             print("ça vient")
+    if invoc == "4star":
+        item4star = random.choices(["perso", "arme"], weights=[0.50, 0.50], k=1)[0]
+        if item4star == "arme":
+            arme4star = generate_item_3or4()
+            print(arme_4_stars_perma[arme4star])
 #pour truc demandé par prof : 180 (au max pour etre sur) = 1 donc apres bah c des pourcentages de 1 ? faire une fonction qui permet de choisir a quelle % on veut savoir
 
 def nombre_invocations_pour_pourcentage(desire_prcentage):
     nombre_invocations = 0
-    total_personnages = 0
-    while total_personnages < 180 * desire_prcentage / 100:
-        total_personnages += 1
-        nombre_invocations += 1
+    nombre_invocations = 180 * desire_prcentage / 100
     return nombre_invocations
-prcentage_voulu = 110 # Vous pouvez changer ce pourcentage selon vos besoins
-nombre_d_invocations = nombre_invocations_pour_pourcentage(pourcentage_voulu)
+prcentage_voulu = 200 # Vous pouvez changer ce pourcentage selon vos besoins
+nombre_d_invocations = nombre_invocations_pour_pourcentage(prcentage_voulu)
 print(f"Il vous faut {nombre_d_invocations} invocations pour obtenir {prcentage_voulu}% du personnage mis en avant.")
