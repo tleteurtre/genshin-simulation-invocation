@@ -22,6 +22,8 @@ import random
 
 # liste perso 4 stars = TOUS = "Bennet" "Amber" "Lisa" "Kaeya" "Barbara" "Dori" "Xinqyu" "Chongyun" "Xinyan" "Razor" "Noelle" "Ningguang" "Thomas" "Collei" "Candace" "Rosaria" "Beidou" "Layla" 
 # "Fishl" "Yanfei" "Sayu" "Gorou" "Yun Jin" "Mika" "Kujou Sara" "Faruzan" "Heizou" "Diona" "Kuki Shinobu" "Sucrose" "Yaoyao" "Xiangling"
+# "Ningguang" "Thomas" "Collei" "Candace" "Rosaria" "Beidou" "Layla" 
+#"Fishl" "Yanfei" "Sayu" "Gorou" "Yun Jin" "Mika" "Kujou Sara" "Faruzan" "Heizou" "Diona" "Kuki Shinobu" "Sucrose" "Yaoyao" "Xiangling"}
 #-------------------------------- si le perso 4 stars n'est pas un de la bannière, le prochain perso 4 stars sera forcément un des trois---------------------------------------
 
 
@@ -34,20 +36,15 @@ import random
 #faire un dico pour chaque type d'arme genre générer d'abord la rareté puis l'arme en question
 # -----> jpense faut faire une boucle qui prends en compte les garanties et ajouter des dictionnaires ?
 
-#au cas ou :
-sword4starsperma = {"sword2" : "rugissement du lion", "sword3" : "epee rituelle", "sword4" : "flute", "sword5" :"epee de favonius", 
-                         "sword6" : "eclair des impasses"}
-bow4starsperma = {"bow2": "derniere corde", "bow3" : "arc rituel","bow4" : "traqueur des impasses", "bow5" : "arc rouillé", 
-                      "bow6" : "arc de chasse de Favonius"}
-claymore4starsperma ={"claymore2" : "ombre immaculée", "claymore3" : "espadon de Favonius", "claymore4" : "fluorescence",
-                          "claymore5" : "espadon rituel", "claymore6" : "espadon Royal"}
-lance4starsperma = {"lance2" : "fleau du dragon", "lance3" : "la prise", "lance4" : "lance de Favonius"}
+def nombre_invocations_pour_pourcentage(desire_prcentage):
+    nombre_invocations = 0
+    nombre_invocations = 180 * desire_prcentage / 100
+    return nombre_invocations
+prcentage_voulu = 20 
+nombre_d_invocations = nombre_invocations_pour_pourcentage(prcentage_voulu)
+print(f"Il vous faut {nombre_d_invocations} invocations pour obtenir {prcentage_voulu}% du personnage mis en avant.")
 
-gremory4starsperma = {"gremory2" : "oeil de la perception", "gremory3" : "mouvement vagabond", "gremory4" : "atlas des Terres et des Mers",
-                          "gremory5" : "memoires des rituels", "gremory6" : "code de favonius"}
-
-
-def generate_item_3or4():
+def generate_arms_4():
     words = ["sword", "gremory", "lance", "bow", "claymore"]
     first_word = random.choice(words)
     if first_word == "lance" :
@@ -58,14 +55,28 @@ def generate_item_3or4():
         result = first_word + random_number
     
     return result
-print(generate_item_3or4())
 
+def generate_perso_5star():
+    words = ["perso"]
+    first_word = random.choice(words)
+    random_number = str(random.randint(1, 6))
+    result = first_word + random_number
+    
+    return result
+def generate_perso_4star():
+    words = ["perso"]
+    first_word = random.choice(words)
+    random_number = str(random.randint(1, 12))
+    result = first_word + random_number
+    return result
 
-def banniere_perma_alpha():
+def banniere_perma_single():
     arme_5_stars_perma = {"gremory1":"Atlas de la Voute d Azur", "lance1" : "Berge de la Voute d'Azur", "bow1" : "Ailes de la Voute d'Azur",
                            "claymore1": "Fierté de la Voute d'Azur","sword1" : "Lame de la Voute d'Azur"}
     perso_5_stars = {"perso1": "Keqing", "perso2": "Mona", "perso3": "Qiqi", "perso4": "Diluc", "perso5" :"Jean", "perso6": "Tighnari", "perso6": "dehya"}
     
+    perso_4_stars = {"perso1" :"Bennet", "perso2": "Amber", "perso3" : "Lisa", "perso5" : "Kaeya", "perso6" : "Barbara", "perso7": "Dori",
+                      "perso8" : "Xinqyu", "perso9": "Chongyun", "perso10": "Xinyan", "perso11" :  "Razor", "perso12": "Noelle"}
     arme_4_stars_perma = {"sword2" : "rugissement du lion", "sword3" : "epee rituelle", "sword4" : "flute", "sword5" :"epee de favonius", 
                            "sword6" : "eclair des impasses","bow2": "derniere corde", "bow3" : "arc rituel","bow4" : "traqueur des impasses", "bow5" : "arc rouillé",
                           "bow6" : "arc de chasse de Favonius","claymore2" : "ombre immaculée", "claymore3" : "espadon de Favonius", "claymore4" : "fluorescence",
@@ -74,8 +85,8 @@ def banniere_perma_alpha():
                           "gremory5" : "memoires des rituels", "gremory6" : "code de favonius"}
     
     
-    arme_3_stars_perma = {"sword2" : "messager de l'aube", "sword3" :"lame froide", "sword4" : "épée céleste", "sword5" : "épée du voyageur", "claymore2" : "ombre ferreuse", "claymore 3" : "grande épée en fer blanc", "claymore4" : "grande épée céleste", 
-                          "claymore5" : "épée de la raison", "claymore6" : "épée céleste","lance2" : "hallebarde", "lance3" : "pampille blanche", "lance4" : "pampille noire", 
+    arme_3_stars_perma = {"sword2" : "messager de l'aube", "sword3" :"lame froide", "sword4" : "epee celeste", "sword5" : "épee du voyageur", "claymore2" : "ombre ferreuse", "claymore 3" : "grande epee en fer blanc", 
+                          "claymore4" : "grande épée céleste", "claymore5" : "épée de la raison", "claymore6" : "épée céleste","lance2" : "hallebarde", "lance3" : "pampille blanche", "lance4" : "pampille noire", 
                           "bow2" : "serment de l archer","bow3" : "messager", "bow4": "lance-pierre", "bow5" : "arc du corbeau", "bow6" : "arc courbé", 
                           "gremory2" : "orbe jadien", "gremory3" : "néphrite jumelle", "gremory4" : "tales of the dragon slayers", "gremory5" : "guide de magie", "gremory6" :"conte d'un autre monde"}
     proba3star = 94.3
@@ -92,17 +103,62 @@ def banniere_perma_alpha():
             arme5stars = random.choices(["gremory1", "sword1", "bow1", "lance1", "claymore1"], k=1)[0]
             print(arme_5_stars_perma[arme5stars])
         if item5stars== "perso":
-            print("ça vient")
+            perso_obtenu  =generate_perso_5star()
+            print(perso_5_stars[perso_obtenu])
     if invoc == "4star":
         item4star = random.choices(["perso", "arme"], weights=[0.50, 0.50], k=1)[0]
         if item4star == "arme":
-            arme4star = generate_item_3or4()
+            arme4star = generate_arms_4()
             print(arme_4_stars_perma[arme4star])
+        if item4star == "perso":
+            perso4star = generate_perso_4star()
+            print(perso_4_stars[perso4star])
+    if invoc == "3star":
+        arme3star = generate_arms_4()
+        print(arme_3_stars_perma[arme3star])
+print(banniere_perma_single())
 
-def nombre_invocations_pour_pourcentage(desire_prcentage):
-    nombre_invocations = 0
-    nombre_invocations = 180 * desire_prcentage / 100
-    return nombre_invocations
-prcentage_voulu = 200 
-nombre_d_invocations = nombre_invocations_pour_pourcentage(prcentage_voulu)
-print(f"Il vous faut {nombre_d_invocations} invocations pour obtenir {prcentage_voulu}% du personnage mis en avant.")
+def banniere_perma_multi():
+    arme_5_stars_perma = {"gremory1":"Atlas de la Voute d Azur", "lance1" : "Berge de la Voute d'Azur", "bow1" : "Ailes de la Voute d'Azur",
+                           "claymore1": "Fierté de la Voute d'Azur","sword1" : "Lame de la Voute d'Azur"}
+    perso_5_stars = {"perso1": "Keqing", "perso2": "Mona", "perso3": "Qiqi", "perso4": "Diluc", "perso5" :"Jean", "perso6": "Tighnari", "perso6": "dehya"}
+    
+    perso_4_stars = {"perso1" :"Bennet", "perso2": "Amber", "perso3" : "Lisa", "perso5" : "Kaeya", "perso6" : "Barbara", "perso7": "Dori",
+                      "perso8" : "Xinqyu", "perso9": "Chongyun", "perso10": "Xinyan", "perso11" :  "Razor", "perso12": "Noelle"}
+    arme_4_stars_perma = {"sword2" : "rugissement du lion", "sword3" : "epee rituelle", "sword4" : "flute", "sword5" :"epee de favonius", 
+                           "sword6" : "eclair des impasses","bow2": "derniere corde", "bow3" : "arc rituel","bow4" : "traqueur des impasses", "bow5" : "arc rouillé",
+                          "bow6" : "arc de chasse de Favonius","claymore2" : "ombre immaculée", "claymore3" : "espadon de Favonius", "claymore4" : "fluorescence",
+                          "claymore5" : "espadon rituel", "claymore6" : "espadon Royal","lance2" : "fleau du dragon", "lance3" : "la prise", "lance4" : "lance de Favonius", 
+                          "gremory2" : "oeil de la perception", "gremory3" : "mouvement vagabond", "gremory4" : "atlas des Terres et des Mers",
+                          "gremory5" : "memoires des rituels", "gremory6" : "code de favonius"}
+    
+    
+    arme_3_stars_perma = {"sword2" : "messager de l'aube", "sword3" :"lame froide", "sword4" : "epee celeste", "sword5" : "épee du voyageur", "claymore2" : "ombre ferreuse", "claymore 3" : "grande epee en fer blanc", 
+                          "claymore4" : "grande épée céleste", "claymore5" : "epee de la raison", "claymore6" : "epee celeste","lance2" : "hallebarde", "lance3" : "pampille blanche", "lance4" : "pampille noire", 
+                          "bow2" : "serment de l archer","bow3" : "messager", "bow4": "lance-pierre", "bow5" : "arc du corbeau", "bow6" : "arc courbé", 
+                          "gremory2" : "orbe jadien", "gremory3" : "nephrite jumelle", "gremory4" : "tales of the dragon slayers", "gremory5" : "guide de magie", "gremory6" :"conte d'un autre monde"}
+    liste_invocations_obtenus = []
+    for i in range(10):
+            invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 5.100, 94.3], k=1)[0]
+            if invoc == "5star":
+                item5stars = random.choices(["perso", "arme"], weights=[0.50, 0.50], k=1)[0]
+                if item5stars == "arme":
+                    arme5stars = random.choices(["gremory1", "sword1", "bow1", "lance1", "claymore1"], k=1)[0]
+                    liste_invocations_obtenus.append(arme_5_stars_perma[arme5stars])
+                if item5stars== "perso":
+                    perso_obtenu  =generate_perso_5star()
+                    liste_invocations_obtenus.append(perso_5_stars[perso_obtenu])
+            if invoc == "4star":
+                item4star = random.choices(["perso", "arme"], weights=[0.50, 0.50], k=1)[0]
+                if item4star == "arme":
+                    arme4star = generate_arms_4()
+                    liste_invocations_obtenus.append(arme_4_stars_perma[arme4star])
+                if item4star == "perso":
+                    perso4star = generate_perso_4star()
+                    liste_invocations_obtenus.append(perso_4_stars[perso4star])
+            if invoc == "3star":
+                arme3star = generate_arms_4()
+                a = arme_3_stars_perma[arme3star]
+                liste_invocations_obtenus.append(a)
+    return liste_invocations_obtenus
+print(banniere_perma_multi())
