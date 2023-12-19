@@ -259,38 +259,109 @@ def multi_intra(pity):
             
             if data == 90: #cas maximum
                 invoc = random.choices(["5star", "4star", "3star"], weights=[100 ,0, 0], k=1)[0]
+                pity = 1
                 if invoc == "5star":
                     item5stars = random.choices(["perso", "arme"], weights=[0.50, 0.50], k=1)[0]
                     if item5stars == "arme":
                         arme5stars = random.choices(["gremory1", "sword1", "bow1", "lance1", "claymore1"], k=1)[0]
                         liste_invocations_obtenus.append(arme_5_stars_perma[arme5stars])
-                        pity = 1
+                        
                     if item5stars== "perso":
                         perso_obtenu  =generate_perso_5star()
                         liste_invocations_obtenus.append(perso_5_stars[perso_obtenu])
-                        pity = 1
+                        
                 
-            elif data == 1:
+            elif data == 1: #cas minimum
                 invoc = random.choices(["5star", "4star", "3star"], weights=[0.600, 5.100, 94.3], k=1)[0]
+                pity = 2
                 if invoc == "5star":
                     item5stars = random.choices(["perso", "arme"], weights=[0.50, 0.50], k=1)[0]
                     if item5stars == "arme":
                         arme5stars = random.choices(["gremory1", "sword1", "bow1", "lance1", "claymore1"], k=1)[0]
                         liste_invocations_obtenus.append(arme_5_stars_perma[arme5stars])
+
                     if item5stars== "perso":
                         perso_obtenu  =generate_perso_5star()
                         liste_invocations_obtenus.append(perso_5_stars[perso_obtenu])
+                        
                 elif invoc == "4star":
                     item4star = random.choices(["perso", "arme"], weights=[0.50, 0.50], k=1)[0]
                     if item4star == "arme":
                         arme4star = generate_arms_4()
                         liste_invocations_obtenus.append(arme_4_stars_perma[arme4star])
+                        
                     if item4star == "perso":
                         perso4star = generate_perso_4star()
                         liste_invocations_obtenus.append(perso_4_stars[perso4star])
+                       
                 elif invoc == "3star":
                     arme3star = generate_arms_3()
                     a = arme_3_stars_perma[arme3star]
                     liste_invocations_obtenus.append(a)
+                   
             #coder pour entre (2 et 73) et (74 et 89)
+            elif 2 <= data <= 73:
+                proba5star = 0.600* (10/111)**data
+                invoc = random.choices(["5star", "4star", "3star"], weights=[proba5star, 5.100, 94.9-proba5star], k=1)[0]
+                pity = pity +1
+                if invoc == "5star":
+                    item5stars = random.choices(["perso", "arme"], weights=[0.50, 0.50], k=1)[0]
+                    if item5stars == "arme":
+                        arme5stars = random.choices(["gremory1", "sword1", "bow1", "lance1", "claymore1"], k=1)[0]
+                        liste_invocations_obtenus.append(arme_5_stars_perma[arme5stars])
+                     
+                    if item5stars== "perso":
+                        perso_obtenu  =generate_perso_5star()
+                        liste_invocations_obtenus.append(perso_5_stars[perso_obtenu])
+
+                elif invoc == "4star":
+                    item4star = random.choices(["perso", "arme"], weights=[0.50, 0.50], k=1)[0]
+                    if item4star == "arme":
+                        arme4star = generate_arms_4()
+                        liste_invocations_obtenus.append(arme_4_stars_perma[arme4star])
+                    
+                    if item4star == "perso":
+                        perso4star = generate_perso_4star()
+                        liste_invocations_obtenus.append(perso_4_stars[perso4star])
+                    
+                elif invoc == "3star":
+                    arme3star = generate_arms_3()
+                    a = arme_3_stars_perma[arme3star]
+                    liste_invocations_obtenus.append(a)
+            
+            elif 74 <= data <= 89:
+                proba5star = 0.600 + data*6
+                invoc = random.choices(["5star", "4star", "3star"], weights=[proba5star, 5.100, 94.9-proba5star], k=1)[0]
+                pity = pity +1
+                if invoc == "5star":
+                    item5stars = random.choices(["perso", "arme"], weights=[0.50, 0.50], k=1)[0]
+                    if item5stars == "arme":
+                        arme5stars = random.choices(["gremory1", "sword1", "bow1", "lance1", "claymore1"], k=1)[0]
+                        liste_invocations_obtenus.append(arme_5_stars_perma[arme5stars])
+                     
+                    if item5stars== "perso":
+                        perso_obtenu  =generate_perso_5star()
+                        liste_invocations_obtenus.append(perso_5_stars[perso_obtenu])
+
+                elif invoc == "4star":
+                    item4star = random.choices(["perso", "arme"], weights=[0.50, 0.50], k=1)[0]
+                    if item4star == "arme":
+                        arme4star = generate_arms_4()
+                        liste_invocations_obtenus.append(arme_4_stars_perma[arme4star])
+                    
+                    if item4star == "perso":
+                        perso4star = generate_perso_4star()
+                        liste_invocations_obtenus.append(perso_4_stars[perso4star])
+                    
+                elif invoc == "3star":
+                    arme3star = generate_arms_3()
+                    a = arme_3_stars_perma[arme3star]
+                    liste_invocations_obtenus.append(a)
+                
     print(liste_invocations_obtenus)
+    final = str(input("Tu veux recommencer, genre ?(Y/N)"))
+    if final == "Y":
+        multi_intra(pity)
+    else : 
+        print("See ya !")
+    
