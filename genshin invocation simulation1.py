@@ -160,13 +160,13 @@ def multi_v1():
         print(liste_invocations_obtenus)
         wanna_continue = str(input("Tu veux continuer ? (Yes/No)"))
         if wanna_continue == "Yes":
-            print("Yes boss !")
+            print("Yes !")
             multi_v1()
         else:
-            print("A la prochaine alors bg")
+            print("A la prochaine alors")
     
     else:
-        print("Bah casse toi alors")
+        print("Bah salut alors")
     
 def perma_multi_global():
     arme_5_stars_perma = {"gremory1":"Atlas de la Voute d Azur", "lance1" : "Berge de la Voute d'Azur", "bow1" : "Ailes de la Voute d'Azur",
@@ -228,7 +228,7 @@ def perma_multi_global():
         print(liste_invocations_obtenus)
         again = str(input("Tu veux voir la suite ? (O/N)"))
         if again == "O":
-            print("travaux en cours")
+            
             multi_intra(10)
         else:
             print("Merci d'avoir participé à cette expérience !")
@@ -249,7 +249,7 @@ def multi_intra(pity):
                           "gremory5" : "memoires des rituels", "gremory6" : "code de favonius"}
     
     
-    arme_3_stars_perma = {"sword2" : "messager de l'aube", "sword3" :"lame froide", "sword4" : "epee celeste", "sword5" : "épee du voyageur", "claymore2" : "ombre ferreuse", "claymore 3" : "grande epee en fer blanc", 
+    arme_3_stars_perma = {"sword2" : "messager de l'aube", "sword3" :"lame froide", "sword4" : "epee celeste", "sword5" : "épee du voyageur", "claymore2" : "ombre ferreuse", "claymore3" : "grande epee en fer blanc", 
                           "claymore4" : "grande épée céleste", "claymore5" : "epee de la raison", "claymore6" : "epee celeste","lance2" : "hallebarde", "lance3" : "pampille blanche", "lance4" : "pampille noire", 
                           "bow2" : "serment de l archer","bow3" : "messager", "bow4": "lance-pierre", "bow5" : "arc du corbeau", "bow6" : "arc courbé", 
                           "gremory2" : "orbe jadien", "gremory3" : "nephrite jumelle", "gremory4" : "tales of the dragon slayers", "gremory5" : "guide de magie", "gremory6" :"conte d'un autre monde"}
