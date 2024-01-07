@@ -131,7 +131,7 @@ def multi_v1():
                           "bow2" : "serment de l archer","bow3" : "messager", "bow4": "lance-pierre", "bow5" : "arc du corbeau", "bow6" : "arc courbé", 
                           "gremory2" : "orbe jadien", "gremory3" : "néphrite jumelle", "gremory4" : "tales of the dragon slayers", "gremory5" : "guide de magie", "gremory6" :"conte d'un autre monde"}
     liste_invocations_obtenus = []
-    print("bienvenue dans cette merde !")
+    print("bienvenue dans cette version one shot des multi !")
     time.sleep(2)
     come_on = str(input("Tu veux commencer une multi ? Aller, lâche toi, tu verra c'est marrant (O/N)"))
     if come_on == "O":
@@ -183,7 +183,7 @@ def perma_multi_global():
                           "gremory5" : "memoires des rituels", "gremory6" : "code de favonius"}
     
     
-    arme_3_stars_perma = {"sword2" : "messager de l'aube", "sword3" :"lame froide", "sword4" : "epee celeste", "sword5" : "épee du voyageur", "claymore2" : "ombre ferreuse", "claymore 3" : "grande epee en fer blanc", 
+    arme_3_stars_perma = {"sword2" : "messager de l'aube", "sword3" :"lame froide", "sword4" : "epee celeste", "sword5" : "épee du voyageur", "claymore2" : "ombre ferreuse", "claymore3" : "grande epee en fer blanc", 
                           "claymore4" : "grande épée céleste", "claymore5" : "epee de la raison", "claymore6" : "epee celeste","lance2" : "hallebarde", "lance3" : "pampille blanche", "lance4" : "pampille noire", 
                           "bow2" : "serment de l archer","bow3" : "messager", "bow4": "lance-pierre", "bow5" : "arc du corbeau", "bow6" : "arc courbé", 
                           "gremory2" : "orbe jadien", "gremory3" : "nephrite jumelle", "gremory4" : "tales of the dragon slayers", "gremory5" : "guide de magie", "gremory6" :"conte d'un autre monde"}
